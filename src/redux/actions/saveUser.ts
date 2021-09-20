@@ -1,6 +1,7 @@
+import { TUser } from "../../dataTypes";
 import { SAVE_USER } from "./types";
 
-const saveUser = userData => (
+const saveUser = (userData: TUser[]) => (
   {
     type: SAVE_USER,
     payload: {
