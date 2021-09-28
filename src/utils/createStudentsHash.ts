@@ -1,8 +1,11 @@
-import { TStudent, TStudentHash } from "../dataTypes";
+import { Record, Records, FieldSet } from "airtable";
 
-export const createStudentsHash = (records: TStudent[]) => {
-  const hash: TStudentHash = {};
-  records.forEach((record: TStudent) => hash[record.id] = record.fields.Name);
+type hashType = {
+  [key: string]: any
+}
+export const createStudentsHash = (records: Records<FieldSet>) => {
+  const hash: hashType  = {};
+  records.forEach((record: Record<FieldSet>) => hash[record.id] = record.fields.Name);
   return hash;
 };
 

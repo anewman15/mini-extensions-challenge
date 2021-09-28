@@ -1,8 +1,8 @@
-import { TClass } from "../dataTypes";
+import { Record, Records, FieldSet } from "airtable";
 
-const createStudentsArray = (records: TClass[]) => {
-  const studentIdArray: string[][] = [];
-  records.forEach((record: TClass) => studentIdArray.push(record.fields.Students));
+const createStudentsArray = (records: Records<FieldSet>) => {
+  const studentIdArray: any[] = [];
+  records.forEach((record: Record<FieldSet>) => studentIdArray.push(record.fields.Students));
   return studentIdArray.flat();
 };
 

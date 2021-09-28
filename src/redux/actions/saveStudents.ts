@@ -1,7 +1,6 @@
-import { TStudentHash } from "../../dataTypes";
 import { SAVE_STUDENTS } from "./types";
 
-const saveStudents = (studentsData: TStudentHash) => (
+const saveStudents = (studentsData: any) => (
   {
     type: SAVE_STUDENTS,
     payload: {
